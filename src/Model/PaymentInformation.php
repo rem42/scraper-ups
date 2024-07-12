@@ -1,8 +1,15 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
 class PaymentInformation
 {
-    public ?ShipmentCharge $shipmentCharge = null;
+    /** @var array<int, ShipmentCharge> */
+    public array $shipmentCharge = [];
+
+    public function addShipmentCharge(ShipmentCharge $shipmentCharge): self
+    {
+        $this->shipmentCharge[] = $shipmentCharge;
+        return $this;
+    }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Request;
 
@@ -13,11 +13,11 @@ abstract class UpsRequest extends ScraperRequest implements RequestHeaders
 {
     public const DEV = 'wwwcie';
     public const PROD = 'onlinetools';
+
     public function __construct(
-        private readonly string $environnement = self::DEV,
+        private readonly string $environnement,
         private readonly string $merchantId,
-    ) {
-    }
+    ) {}
 
     public function getEnvironnement(): string
     {
