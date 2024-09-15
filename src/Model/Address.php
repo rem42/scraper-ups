@@ -10,6 +10,7 @@ class Address
     public ?string $stateProvinceCode = null;
     public ?string $postalCode = null;
     public ?string $countryCode = null;
+    public ?bool $residentialAddressIndicator = null;
 
     public function addAddressLine(string $addressLine): self
     {
@@ -38,6 +39,12 @@ class Address
     public function setCountryCode(?string $countryCode): self
     {
         $this->countryCode = $countryCode;
+        return $this;
+    }
+
+    public function setResidentialAddressIndicator(?bool $residentialAddressIndicator): self
+    {
+        $this->residentialAddressIndicator = $residentialAddressIndicator;
         return $this;
     }
 }

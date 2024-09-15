@@ -11,7 +11,8 @@ class Shipment
     public ShipFrom $shipFrom;
     public PaymentInformation $paymentInformation;
     public Service $service;
-    public ShipmentIndicationType $shipmentIndicationType;
+    public ?ShipmentIndicationType $shipmentIndicationType = null;
+    public ?ShipmentServiceOptions $shipmentServiceOptions = null;
     /** @var array<int, Package> */
     public array $package = [];
 
@@ -22,7 +23,6 @@ class Shipment
         $this->shipFrom = new ShipFrom();
         $this->paymentInformation = new PaymentInformation();
         $this->service = new Service();
-        $this->shipmentIndicationType = new ShipmentIndicationType();
     }
 
     public function addPackage(Package $package): self
@@ -62,14 +62,21 @@ class Shipment
         return $this->service;
     }
 
-    public function getShipmentIndicationType(): ShipmentIndicationType
+    public function setShipmentIndicationType(?ShipmentIndicationType $shipmentIndicationType): self
     {
-        return $this->shipmentIndicationType;
+        $this->shipmentIndicationType = $shipmentIndicationType;
+        return $this;
     }
 
     public function setAlternateDeliveryAddress(AlternateDeliveryAddress $alternateDeliveryAddress): self
     {
         $this->alternateDeliveryAddress = $alternateDeliveryAddress;
+        return $this;
+    }
+
+    public function setShipmentServiceOptions(ShipmentServiceOptions $shipmentServiceOptions): self
+    {
+        $this->shipmentServiceOptions = $shipmentServiceOptions;
         return $this;
     }
 }
