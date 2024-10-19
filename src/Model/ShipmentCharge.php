@@ -5,12 +5,8 @@ namespace Scraper\ScraperUPS\Model;
 class ShipmentCharge
 {
     public ?string $type = null;
-    public BillShipper $billShipper;
-
-    public function __construct()
-    {
-        $this->billShipper = new BillShipper();
-    }
+    public ?BillShipper $billShipper = null;
+    public ?BillReceiver $billReceiver = null;
 
     public function setType(?string $type): self
     {
@@ -18,8 +14,15 @@ class ShipmentCharge
         return $this;
     }
 
-    public function getBillShipper(): BillShipper
+    public function setBillShipper(?BillShipper $billShipper): self
     {
-        return $this->billShipper;
+        $this->billShipper = $billShipper;
+        return $this;
+    }
+
+    public function setBillReceiver(?BillReceiver $billReceiver): self
+    {
+        $this->billReceiver = $billReceiver;
+        return $this;
     }
 }
