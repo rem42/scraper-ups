@@ -4,20 +4,41 @@ namespace Scraper\ScraperUPS\Model;
 
 class InternationalForms
 {
-    /** @var array<int, string>  */
+    /** @var array<int, string> */
     public array $formType = [];
-    /** @var array<int, Product>  */
+    public ?CN22Form $CN22Form = null;
+    public ?Contacts $contacts = null;
+    /** @var array<int, Product> */
     public array $products = [];
     public ?string $invoiceDate = null;
     public ?string $purchaseOrderNumber = null;
+    public ?string $reasonForExport = null;
     public ?string $currencyCode = null;
-    
+
     public function addFormType(string $formType): self
     {
         $this->formType[] = $formType;
         return $this;
     }
-    
+
+    public function setCN22Form(?CN22Form $CN22Form): self
+    {
+        $this->CN22Form = $CN22Form;
+        return $this;
+    }
+
+    public function setContacts(?Contacts $contacts): self
+    {
+        $this->contacts = $contacts;
+        return $this;
+    }
+
+    public function setFormType(array $formType): self
+    {
+        $this->formType = $formType;
+        return $this;
+    }
+
     public function addProduct(Product $product): self
     {
         $this->products[] = $product;
@@ -33,6 +54,12 @@ class InternationalForms
     public function setPurchaseOrderNumber(?string $purchaseOrderNumber): self
     {
         $this->purchaseOrderNumber = $purchaseOrderNumber;
+        return $this;
+    }
+
+    public function setReasonForExport(?string $reasonForExport): self
+    {
+        $this->reasonForExport = $reasonForExport;
         return $this;
     }
 

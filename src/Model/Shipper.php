@@ -6,6 +6,7 @@ class Shipper
 {
     public ?string $name = null;
     public ?string $attentionName = null;
+    public ?string $companyDisplayableName = null;
     public ?string $taxIdentificationNumber = null;
     public ?Phone $phone = null;
     public ?string $shipperNumber = null;
@@ -27,6 +28,12 @@ class Shipper
     public function setAttentionName(?string $attentionName): self
     {
         $this->attentionName = $attentionName;
+        return $this;
+    }
+
+    public function setCompanyDisplayableName(?string $companyDisplayableName): self
+    {
+        $this->companyDisplayableName = $companyDisplayableName;
         return $this;
     }
 

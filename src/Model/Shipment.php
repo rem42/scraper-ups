@@ -11,6 +11,7 @@ class Shipment
     public ShipFrom $shipFrom;
     public PaymentInformation $paymentInformation;
     public Service $service;
+    public ?string $numOfPiecesInShipment = null;
     public ?ShipmentIndicationType $shipmentIndicationType = null;
     public ?ShipmentServiceOptions $shipmentServiceOptions = null;
     /** @var array<int, Package> */
@@ -60,6 +61,12 @@ class Shipment
     public function getService(): Service
     {
         return $this->service;
+    }
+
+    public function setNumOfPiecesInShipment(?string $numOfPiecesInShipment): self
+    {
+        $this->numOfPiecesInShipment = $numOfPiecesInShipment;
+        return $this;
     }
 
     public function setShipmentIndicationType(?ShipmentIndicationType $shipmentIndicationType): self

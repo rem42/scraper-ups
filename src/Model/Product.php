@@ -6,6 +6,7 @@ class Product
 {
     public ?string $description = null;
     public ?string $originCountryCode = null;
+    public ?Unit $unit = null;
     public ?ProductWeight $productWeight = null;
 
     public function setDescription(?string $description): self
@@ -17,6 +18,12 @@ class Product
     public function setOriginCountryCode(?string $originCountryCode): self
     {
         $this->originCountryCode = $originCountryCode;
+        return $this;
+    }
+
+    public function setUnit(?Unit $unit): self
+    {
+        $this->unit = $unit;
         return $this;
     }
 
