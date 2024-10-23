@@ -9,7 +9,7 @@ class InternationalForms
     public ?CN22Form $CN22Form = null;
     public ?Contacts $contacts = null;
     /** @var array<int, Product> */
-    public array $products = [];
+    public array $product = [];
     public ?string $invoiceDate = null;
     public ?string $purchaseOrderNumber = null;
     public ?string $reasonForExport = null;
@@ -41,7 +41,7 @@ class InternationalForms
 
     public function addProduct(Product $product): self
     {
-        $this->products[] = $product;
+        $this->product[] = $product;
         return $this;
     }
 

@@ -10,6 +10,7 @@ use Scraper\Scraper\Request\RequestException;
 use Scraper\ScraperUPS\Model\ShipmentRequest;
 use Scraper\ScraperUPS\Serializer\NameConverter\CamelCaseToPascalCaseNameConverter;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
@@ -36,7 +37,7 @@ class UpsShipmentRequest extends UpsRequest implements RequestAuthBearer, Reques
 
         return (new Serializer([$normalizer], [new JsonEncoder()]))->serialize([
             'ShipmentRequest' => $this->shipmentRequest,
-        ], 'json');
+        ], JsonEncoder::FORMAT, [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
     }
 
     public function setToken(string $token): self

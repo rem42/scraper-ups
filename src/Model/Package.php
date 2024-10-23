@@ -5,6 +5,7 @@ namespace Scraper\ScraperUPS\Model;
 class Package
 {
     public ?string $description = null;
+    public ?string $numOfPieces = null;
     public Packaging $packaging;
     public ?Dimension $dimensions = null;
     public PackageWeight $packageWeight;
@@ -18,6 +19,12 @@ class Package
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+        return $this;
+    }
+
+    public function setNumOfPieces(?string $numOfPieces): self
+    {
+        $this->numOfPieces = $numOfPieces;
         return $this;
     }
 
