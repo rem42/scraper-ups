@@ -6,9 +6,10 @@ use Scraper\Scraper\Attribute\Method;
 use Scraper\Scraper\Attribute\Scraper;
 use Scraper\Scraper\Request\RequestAuthBasic;
 use Scraper\Scraper\Request\RequestBody;
+use Scraper\Scraper\Request\RequestException;
 
 #[Scraper(method: Method::POST, path: '/security/v1/oauth/token')]
-class UpsCreateTokenRequest extends UpsRequest implements RequestAuthBasic, RequestBody
+class UpsCreateTokenRequest extends UpsRequest implements RequestAuthBasic, RequestBody, RequestException
 {
     public function __construct(
         string $environnement,
@@ -17,6 +18,11 @@ class UpsCreateTokenRequest extends UpsRequest implements RequestAuthBasic, Requ
         private readonly string $clientSecret,
     ) {
         parent::__construct($environnement, $merchantId);
+    }
+
+    public function isThrow(): bool
+    {
+        return false;
     }
 
     public function getBody(): array
