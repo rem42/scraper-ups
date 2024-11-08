@@ -5,11 +5,11 @@ namespace Scraper\ScraperUPS\Response\UploadRequest;
 class FormsHistoryDocumentId
 {
     /** @var array<int, string> */
-    public array $documentId = [];
+    public array $documentID = [];
 
-    public function addDocumentId(string $documentId): self
+    public function addDocumentID(string $documentID): self
     {
-        $this->documentId[] = $documentId;
+        $this->documentID[] = $documentID;
         return $this;
     }
 }

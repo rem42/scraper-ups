@@ -16,7 +16,7 @@ abstract class UpsRequest extends ScraperRequest implements RequestHeaders
 
     public function __construct(
         private readonly string $environnement,
-        private readonly string $merchantId,
+        protected readonly string $merchantId,
     ) {}
 
     public function getEnvironnement(): string

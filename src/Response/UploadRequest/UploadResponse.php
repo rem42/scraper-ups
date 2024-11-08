@@ -5,5 +5,5 @@ namespace Scraper\ScraperUPS\Response\UploadRequest;
 class UploadResponse
 {
     public ?Response $response = null;
-    public ?FormsHistoryDocumentId $formsHistoryDocumentId = null;
+    public ?FormsHistoryDocumentId $formsHistoryDocumentID = null;
 }

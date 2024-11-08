@@ -10,6 +10,8 @@ class InternationalForms
     public ?Contacts $contacts = null;
     /** @var array<int, Product> */
     public array $product = [];
+    /** @var array<int, UserCreatedForm> */
+    public array $userCreatedForm = [];
     public ?string $invoiceDate = null;
     public ?string $purchaseOrderNumber = null;
     public ?string $reasonForExport = null;
@@ -42,6 +44,12 @@ class InternationalForms
     public function addProduct(Product $product): self
     {
         $this->product[] = $product;
+        return $this;
+    }
+
+    public function addUserCreatedForm(UserCreatedForm $userCreatedForm): self
+    {
+        $this->userCreatedForm[] = $userCreatedForm;
         return $this;
     }
 

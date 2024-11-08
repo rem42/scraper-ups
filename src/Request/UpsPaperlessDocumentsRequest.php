@@ -7,6 +7,7 @@ use Scraper\Scraper\Attribute\Scraper;
 use Scraper\Scraper\Request\RequestAuthBearer;
 use Scraper\Scraper\Request\RequestBody;
 use Scraper\Scraper\Request\RequestException;
+use Scraper\Scraper\Request\RequestHeaders;
 use Scraper\ScraperUPS\Model\UploadRequest\UploadRequest;
 use Scraper\ScraperUPS\Serializer\NameConverter\CamelCaseToPascalCaseNameConverter;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -15,10 +16,18 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 #[Scraper(method: Method::POST, path: '/api/paperlessdocuments/{version}/upload')]
-class UpsPaperlessDocumentsRequest extends UpsRequest implements RequestAuthBearer, RequestBody, RequestException
+class UpsPaperlessDocumentsRequest extends UpsRequest implements RequestAuthBearer, RequestBody, RequestException, RequestHeaders
 {
     private string $token;
     private UploadRequest $uploadRequest;
+
+    public function __construct(
+        string $environnement,
+        string $merchantId,
+        private readonly string $transId
+    ) {
+        parent::__construct($environnement, $merchantId);
+    }
 
     public function getBearer(): string
     {
@@ -28,6 +37,15 @@ class UpsPaperlessDocumentsRequest extends UpsRequest implements RequestAuthBear
     public function isThrow(): bool
     {
         return false;
+    }
+
+    public function getHeaders(): array
+    {
+        return [
+            ...parent::getHeaders(),
+            'ShipperNumber' => $this->merchantId,
+            'transId' => $this->transId,
+        ];
     }
 
     public function getBody(): string
