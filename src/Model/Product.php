@@ -6,6 +6,8 @@ class Product
 {
     public ?string $description = null;
     public ?string $originCountryCode = null;
+    public ?string $commodityCode = null;
+    public ?string $partNumber = null;
     public ?Unit $unit = null;
     public ?ProductWeight $productWeight = null;
 
@@ -18,6 +20,18 @@ class Product
     public function setOriginCountryCode(?string $originCountryCode): self
     {
         $this->originCountryCode = $originCountryCode;
+        return $this;
+    }
+
+    public function setCommodityCode(?string $commodityCode): self
+    {
+        $this->commodityCode = $commodityCode;
+        return $this;
+    }
+
+    public function setPartNumber(?string $partNumber): self
+    {
+        $this->partNumber = $partNumber;
         return $this;
     }
 
