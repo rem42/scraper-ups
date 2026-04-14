@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Response\TokenRequest;
 
@@ -10,6 +12,7 @@ class Response
     public function addError(Error $error): self
     {
         $this->errors[] = $error;
+
         return $this;
     }
 }

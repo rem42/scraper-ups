@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -14,6 +16,7 @@ class Shipment
     public ?string $numOfPiecesInShipment = null;
     public ?ShipmentIndicationType $shipmentIndicationType = null;
     public ?ShipmentServiceOptions $shipmentServiceOptions = null;
+
     /** @var array<int, Package> */
     public array $package = [];
 
@@ -29,12 +32,14 @@ class Shipment
     public function addPackage(Package $package): self
     {
         $this->package[] = $package;
+
         return $this;
     }
 
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -66,24 +71,28 @@ class Shipment
     public function setNumOfPiecesInShipment(?string $numOfPiecesInShipment): self
     {
         $this->numOfPiecesInShipment = $numOfPiecesInShipment;
+
         return $this;
     }
 
     public function setShipmentIndicationType(?ShipmentIndicationType $shipmentIndicationType): self
     {
         $this->shipmentIndicationType = $shipmentIndicationType;
+
         return $this;
     }
 
     public function setAlternateDeliveryAddress(AlternateDeliveryAddress $alternateDeliveryAddress): self
     {
         $this->alternateDeliveryAddress = $alternateDeliveryAddress;
+
         return $this;
     }
 
     public function setShipmentServiceOptions(ShipmentServiceOptions $shipmentServiceOptions): self
     {
         $this->shipmentServiceOptions = $shipmentServiceOptions;
+
         return $this;
     }
 }

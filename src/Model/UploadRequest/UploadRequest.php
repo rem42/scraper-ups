@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model\UploadRequest;
 
@@ -21,12 +23,14 @@ class UploadRequest
     public function setShipperNumber(?string $shipperNumber): self
     {
         $this->shipperNumber = $shipperNumber;
+
         return $this;
     }
 
     public function addUserCreatedForm(UserCreatedForm $userCreatedForm): self
     {
         $this->userCreatedForm[] = $userCreatedForm;
+
         return $this;
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Request;
 
@@ -24,7 +26,7 @@ class UpsPaperlessDocumentsRequest extends UpsRequest implements RequestAuthBear
     public function __construct(
         string $environnement,
         string $merchantId,
-        private readonly string $transId
+        private readonly string $transId,
     ) {
         parent::__construct($environnement, $merchantId);
     }
@@ -61,6 +63,7 @@ class UpsPaperlessDocumentsRequest extends UpsRequest implements RequestAuthBear
     public function setToken(string $token): self
     {
         $this->token = $token;
+
         return $this;
     }
 
@@ -72,6 +75,7 @@ class UpsPaperlessDocumentsRequest extends UpsRequest implements RequestAuthBear
     public function setUploadRequest(UploadRequest $uploadRequest): self
     {
         $this->uploadRequest = $uploadRequest;
+
         return $this;
     }
 }

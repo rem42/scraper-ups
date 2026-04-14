@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -10,12 +12,14 @@ class LabelStockSize
     public function setHeight(?string $height): self
     {
         $this->height = $height;
+
         return $this;
     }
 
     public function setWidth(?string $width): self
     {
         $this->width = $width;
+
         return $this;
     }
 }

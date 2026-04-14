@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model\UploadRequest;
 
@@ -9,6 +11,7 @@ class TransactionReference
     public function setCustomerContext(?string $customerContext): self
     {
         $this->customerContext = $customerContext;
+
         return $this;
     }
 }

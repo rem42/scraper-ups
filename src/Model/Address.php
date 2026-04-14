@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -15,36 +17,42 @@ class Address
     public function addAddressLine(string $addressLine): self
     {
         $this->addressLine[] = $addressLine;
+
         return $this;
     }
 
     public function setCity(?string $city): self
     {
         $this->city = $city;
+
         return $this;
     }
 
     public function setStateProvinceCode(?string $stateProvinceCode): self
     {
         $this->stateProvinceCode = $stateProvinceCode;
+
         return $this;
     }
 
     public function setPostalCode(?string $postalCode): self
     {
         $this->postalCode = $postalCode;
+
         return $this;
     }
 
     public function setCountryCode(?string $countryCode): self
     {
         $this->countryCode = $countryCode;
+
         return $this;
     }
 
     public function setResidentialAddressIndicator(?bool $residentialAddressIndicator): self
     {
         $this->residentialAddressIndicator = $residentialAddressIndicator;
+
         return $this;
     }
 }

@@ -1,7 +1,7 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Response;
 
-class ServiceOptionsCharge extends AbstractCharge
-{
-}
+class ServiceOptionsCharge extends AbstractCharge {}

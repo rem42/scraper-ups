@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -21,30 +23,35 @@ class ShipTo
     public function setName(?string $name): self
     {
         $this->name = $name;
+
         return $this;
     }
 
     public function setAttentionName(?string $attentionName): self
     {
         $this->attentionName = $attentionName;
+
         return $this;
     }
 
     public function setEMailAddress(?string $eMailAddress): self
     {
         $this->eMailAddress = $eMailAddress;
+
         return $this;
     }
 
     public function setResidential(?string $residential): self
     {
         $this->residential = $residential;
+
         return $this;
     }
 
     public function setLocationID(?string $locationID): self
     {
         $this->locationID = $locationID;
+
         return $this;
     }
 

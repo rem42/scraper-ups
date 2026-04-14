@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -9,6 +11,7 @@ class Contacts
     public function setSoldTo(?SoldTo $soldTo): self
     {
         $this->soldTo = $soldTo;
+
         return $this;
     }
 }

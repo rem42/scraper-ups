@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -15,6 +17,7 @@ class PackageWeight
     public function setWeight(?string $weight): self
     {
         $this->weight = $weight;
+
         return $this;
     }
 

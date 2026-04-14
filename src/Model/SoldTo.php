@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -19,18 +21,21 @@ class SoldTo
     public function setName(?string $name): self
     {
         $this->name = $name;
+
         return $this;
     }
 
     public function setAttentionName(?string $attentionName): self
     {
         $this->attentionName = $attentionName;
+
         return $this;
     }
 
     public function setEMailAddress(?string $eMailAddress): self
     {
         $this->eMailAddress = $eMailAddress;
+
         return $this;
     }
 

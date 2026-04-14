@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -16,12 +18,14 @@ class Unit
     public function setNumber(?string $number): self
     {
         $this->number = $number;
+
         return $this;
     }
 
     public function setValue(?string $value): self
     {
         $this->value = $value;
+
         return $this;
     }
 

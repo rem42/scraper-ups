@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Request;
 
@@ -43,6 +45,7 @@ class UpsShipmentRequest extends UpsRequest implements RequestAuthBearer, Reques
     public function setToken(string $token): self
     {
         $this->token = $token;
+
         return $this;
     }
 
@@ -54,6 +57,7 @@ class UpsShipmentRequest extends UpsRequest implements RequestAuthBearer, Reques
     public function setShipmentRequest(ShipmentRequest $shipmentRequest): self
     {
         $this->shipmentRequest = $shipmentRequest;
+
         return $this;
     }
 }

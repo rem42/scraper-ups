@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Model;
 
@@ -22,36 +24,42 @@ class Shipper
     public function setName(?string $name): self
     {
         $this->name = $name;
+
         return $this;
     }
 
     public function setAttentionName(?string $attentionName): self
     {
         $this->attentionName = $attentionName;
+
         return $this;
     }
 
     public function setCompanyDisplayableName(?string $companyDisplayableName): self
     {
         $this->companyDisplayableName = $companyDisplayableName;
+
         return $this;
     }
 
     public function setTaxIdentificationNumber(?string $taxIdentificationNumber): self
     {
         $this->taxIdentificationNumber = $taxIdentificationNumber;
+
         return $this;
     }
 
     public function setShipperNumber(?string $shipperNumber): self
     {
         $this->shipperNumber = $shipperNumber;
+
         return $this;
     }
 
     public function setFaxNumber(?string $faxNumber): self
     {
         $this->faxNumber = $faxNumber;
+
         return $this;
     }
 

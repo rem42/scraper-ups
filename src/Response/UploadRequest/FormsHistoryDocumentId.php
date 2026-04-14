@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperUPS\Response\UploadRequest;
 
@@ -10,6 +12,7 @@ class FormsHistoryDocumentId
     public function addDocumentID(string $documentID): self
     {
         $this->documentID[] = $documentID;
+
         return $this;
     }
 }
