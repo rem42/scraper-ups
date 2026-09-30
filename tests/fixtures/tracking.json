@@ -1,0 +1,166 @@
+{
+  "trackResponse": {
+    "shipment": [
+      {
+        "inquiryNumber": "1Z023E2X0214323462",
+        "package": [
+          {
+            "trackingNumber": "1Z023E2X0214323462",
+            "deliveryDate": [
+              {
+                "type": "DEL",
+                "date": "20211015"
+              }
+            ],
+            "deliveryTime": {
+              "startTime": "",
+              "endTime": "143211",
+              "type": "DEL"
+            },
+            "activity": [
+              {
+                "location": {
+                  "address": {
+                    "city": "ROSWELL",
+                    "stateProvince": "GA",
+                    "countryCode": "US",
+                    "postalCode": "30076",
+                    "country": "US"
+                  },
+                  "slic": "3071"
+                },
+                "status": {
+                  "type": "D",
+                  "description": "DELIVERED",
+                  "code": "FS",
+                  "statusCode": "011"
+                },
+                "date": "20211015",
+                "time": "143211",
+                "gmtDate": "20211015",
+                "gmtOffset": "-04:00",
+                "gmtTime": "18:32:11"
+              },
+              {
+                "location": {
+                  "address": {
+                    "city": "ATLANTA",
+                    "stateProvince": "GA",
+                    "countryCode": "US",
+                    "postalCode": "",
+                    "country": "US"
+                  },
+                  "slic": "3000"
+                },
+                "status": {
+                  "type": "I",
+                  "description": "Arrived at Facility",
+                  "code": "AR",
+                  "statusCode": "005"
+                },
+                "date": "20211014",
+                "time": "221500",
+                "gmtDate": "20211015",
+                "gmtOffset": "-04:00",
+                "gmtTime": "02:15:00"
+              }
+            ],
+            "currentStatus": {
+              "description": "DELIVERED",
+              "code": "011",
+              "type": "D"
+            },
+            "packageAddress": [
+              {
+                "type": "ORIGIN",
+                "name": "SHIPPER",
+                "attentionName": "",
+                "address": {
+                  "addressLine1": "",
+                  "city": "ALPHARETTA",
+                  "stateProvince": "GA",
+                  "countryCode": "US",
+                  "postalCode": "30005",
+                  "country": "US"
+                }
+              },
+              {
+                "type": "DESTINATION",
+                "name": "RECIPIENT",
+                "attentionName": "",
+                "address": {
+                  "addressLine1": "",
+                  "city": "ROSWELL",
+                  "stateProvince": "GA",
+                  "countryCode": "US",
+                  "postalCode": "30076",
+                  "country": "US"
+                }
+              }
+            ],
+            "weight": {
+              "unitOfMeasurement": "LBS",
+              "weight": "5.00"
+            },
+            "service": {
+              "code": "003",
+              "levelCode": "003",
+              "description": "UPS Ground"
+            },
+            "referenceNumber": [
+              {
+                "type": "SHIPMENT",
+                "number": "ORDER-12345"
+              }
+            ],
+            "deliveryInformation": {
+              "location": "FRONT DOOR",
+              "receivedBy": "",
+              "signature": {
+                "image": ""
+              },
+              "pod": {
+                "content": ""
+              }
+            },
+            "dimension": {
+              "height": "10.00",
+              "length": "12.00",
+              "width": "8.00",
+              "unitOfDimension": "IN"
+            },
+            "packageCount": 1,
+            "milestones": [
+              {
+                "category": "Label Created",
+                "code": "MP",
+                "current": false,
+                "description": "Shipper created a label",
+                "linkedActivity": "",
+                "state": "completed",
+                "subMilestone": {
+                  "category": "Label Created"
+                }
+              },
+              {
+                "category": "Delivered",
+                "code": "FS",
+                "current": true,
+                "description": "DELIVERED",
+                "linkedActivity": "",
+                "state": "completed",
+                "subMilestone": {
+                  "category": "Delivered"
+                }
+              }
+            ]
+          }
+        ],
+        "userRelation": [
+          "MYCHOICE_HOME"
+        ],
+        "warnings": []
+      }
+    ]
+  }
+}
